@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digite seu país</title>
+    <style>
+        body{
+            background-image: url("https://th.bing.com/th/id/R8130fb5323a2263a23b6fab2cf50e076?rik=uHJdZY0vC8fLCg&riu=http%3a%2f%2feskipaper.com%2fimages%2fairport-wallpaper-8.jpg&ehk=y3y8nDMpcNbrQPOgscRMH8tYK%2f8ztEMSny%2b7S7Vwou4%3d&risl=&pid=ImgRaw" )  ;
+            background-repeat: no-repeat;
+            background-size: 1000px ;   
+            font-size: 20pt;       
+                     
+        }
+        h1, div{
+            background-color: rgb(255, 248, 248);
+            color: blue;
+            text-align-last: center;
+            padding: 3px;
+            width: 650px;
+        }
+        div{
+            background-color: rgb(255, 248, 248);
+            color: blue;
+            text-align:center;
+            padding: 6px;
+            width: 550px;
+            margin-left: 50px;
+            border-bottom: 1px blue solid;
+                       
+        }
+
+
+    </style>
+</head>
+<body><H1>Sistema de passageiros</H1>
+    <div>
+    
+    Digite abaixo seus dados: <br/>
+    Verifique se necessita de visto.
+ 
+
+    </div>
+    <div>
+    Olá <input type="text" name="nome" id="nome" placeholder="digite seu nome"> <br/>
+
+    Meu passaporte é do <input type="text" name="ident" id="ident" placeholder="ex: Brasil, EUA, Canadá" >
+
+    <input type="button" value=" Checar " onclick="visto()">
+    </div>
+    <div id="resp">Resultado aqui.</div>
+   
+
+
+    <script>
+       
+        function visto() {
+            var n = document.querySelector('input#nome');
+            var passport = document.querySelector('input#ident');
+            var r= document.querySelector('div#resp');
+
+            if (passport.value == 'Brasil'){
+            r.innerHTML += `<p> Sr(a) ${n.value} como o passaporte é brasileiro, não necessita de visto </p>`
+            }
+            else {
+            r.innerHTML += `<p>Por gentileza sr(a) ${n.value} dirijasse ao guichê para confecção do visto</p>`
+                }
+        
+        r.innerHTML += `<p>Boa viagem, ${n.value}</p>`
+        }
+
+    </script>
+</body>
+</html>

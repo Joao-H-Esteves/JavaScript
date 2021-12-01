@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA DOM</title>
+
+    <style>
+        body{
+            background:  black;
+            color: chocolate;
+            font-size: 20pt Arial;
+            margin-left: 20px;
+        }
+        input{
+            margin: 15px;
+        }
+        span{
+            margin-left: 100px;
+            font-weight: bold;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+   <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpt.stackoverflow.com%2Fquestions%2F2747%2Fcomo-colocar-dois-planos-de-fundo-na-mesma-pagina&psig=AOvVaw21whkxguBiPx7bPljhhVRC&ust=1621966613006000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIiymtL24vACFQAAAAAdAAAAABAD" title="plano de fundo">
+    
+<h1>CALCULADORA</h1>
+
+<input type="number" name= "cx1" id="CX1"> <strong>+</strong>
+<input type="number" name= "cx2" id="CX2"><strong>/</strong>
+<input type="number" name= "cx3" id="CX3">
+<input type="button" value="Calcular" onclick="Calc()">
+
+<br/> 
+
+<span id= "aqui">Resultado</span> 
+
+
+
+<script>
+    function Calc(){
+    var blc1 = document.getElementById('CX1')
+    var blc2 = document.getElementById('CX2')
+    var blc3 = document.getElementById('CX3')
+    var res = document.getElementById('aqui')
+
+    var n1 = Number(blc1.value)
+    var n2 = Number(blc2.value)
+    var n3 = Number(blc3.value)
+
+    var c = n2 / n3 +n1
+
+    res.innerHTML = c
+    }
+</script>
+
+</body>
+</html>

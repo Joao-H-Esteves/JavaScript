@@ -1,0 +1,109 @@
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        header{
+            background-image: url(background.jpg) ;
+            height: 177px;
+            width: 568px;
+            font: normal 30pt Arial;
+            color: gainsboro;
+            
+
+            text-align: center;
+        }
+        body{
+            background-color: rgb(87, 85, 85);
+            font-size:  20pt;
+            box-shadow: 10px -10px 10px rgba(209, 204, 204, 0.8);
+            width: 568px;
+            text-align: center;
+            text-shadow: 3px 3px 3px rgba(209, 204, 204, 0.8);
+            }
+            h1{
+                box-shadow: 10px -10px 10px rgba(209, 204, 204, 0.8);
+            }
+        img{
+            position: relative;
+            margin-left: -280px;
+            margin-left: 50px;
+        }
+        span{
+            font-size: 13pt;
+            background: cornsilk;
+            margin: 10px 20px 10px 70px;
+            padding: 8px
+
+        }
+
+    </style>
+
+    <title>Exercício da Lamapda</title>
+</head>
+<body>
+    <header>
+        Vamos usar o JavaScript para acender , apagar e quebrar uma imagem de Lampada.
+
+    </header>
+    <h1> Lampada</h1>
+    <img src="lampada-apagada.jpg" id="lamp1" onmousemove="acende()" onmouseout="apaga()" onclick= "quebra()"> 
+    <!- Resurso para DOM dentro do HTML->
+   
+
+    <img src="lampada-apagada.jpg" id="lamp2"> <br/>
+
+    <span>DOM no HTML</span>
+    <span>DOM no Script</span>
+
+
+    <script>
+      
+            //function's feitas para o DOM dentro do HTML (lamp1)
+    
+        function acende() {
+            document.getElementById('lamp1').src="lampada-acesa.jpg";
+        }
+
+        function apaga() {
+             document.getElementById('lamp1').src="lampada-apagada.jpg";
+        }
+
+        function quebra() {
+            document.getElementById('lamp1').src="lampada-quebrada.jpg";
+
+        }   //fim das function's do HTML
+
+
+// INICIO DO CODIGO DOM DENTRO APENAS DO SCRIPT (lamp2)
+
+var lampada = document.querySelector('img#lamp2')
+
+lampada.addEventListener('mouseenter', acendeLampada)
+lampada.addEventListener('mouseout', apagaLampada)
+lampada.addEventListener('click', quebraLampada) 
+        
+
+    function acendeLampada(){
+        lampada.src = "lampada-acesa.jpg"
+       
+    
+    }
+    function apagaLampada(){
+        lampada.src = "lampada-apagada.jpg"
+    
+    }
+    function quebraLampada(){
+        lampada.src = "lampada-quebrada.jpg"
+        
+    
+    }
+    
+    
+
+    </script>
+    
+</body>
+</html>
